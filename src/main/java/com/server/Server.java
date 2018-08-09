@@ -25,6 +25,7 @@ public class Server {
 		bootstrap.setFactory(new NioServerSocketChannelFactory(boss,worker));
 		//设置管道工厂
 		bootstrap.setPipelineFactory(new ChannelPipelineFactory() {
+			@Override
 			public ChannelPipeline getPipeline() throws Exception {
 				//创建管道
 				ChannelPipeline pipeline = Channels.pipeline() ;
