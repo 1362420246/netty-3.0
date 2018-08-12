@@ -17,7 +17,8 @@ public class HelloHandler extends SimpleChannelHandler {//处理消息接收和�
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)
 			throws Exception {
-		System.out.println("messageReceived");
+//		System.out.println("messageReceived");
+
 		//未设置接收消息解码器 时 接收的不是字符，是字节流
 		//ChannelBuffer message = (ChannelBuffer)e.getMessage();
 		//String str = new String(message.array());
@@ -34,7 +35,7 @@ public class HelloHandler extends SimpleChannelHandler {//处理消息接收和�
 		//channel.write(copiedBuffer);//发送ChannelBuffer类型
 		
 		//设置发送消息编码器  直接发送字符
-		channel.write("hi");
+//		channel.write("hi");
 		
 		super.messageReceived(ctx, e);
 	}

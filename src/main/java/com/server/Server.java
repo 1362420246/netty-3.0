@@ -30,7 +30,8 @@ public class Server {
 				//创建管道
 				ChannelPipeline pipeline = Channels.pipeline() ;
 				//设置接收消息解码器
-				pipeline.addLast("decoder", new StringDecoder());
+//				pipeline.addLast("decoder", new StringDecoder());
+				pipeline.addLast("decoder", new RoyFramDecoder());
 				//设置发送消息编码器
 				pipeline.addLast("encoder", new StringEncoder());
 				//设置管道处理器
